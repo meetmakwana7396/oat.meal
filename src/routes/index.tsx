@@ -1,4 +1,5 @@
 import { createFileRoute } from '@tanstack/react-router'
+import { Heart } from 'lucide-react'
 
 export const Route = createFileRoute('/')({ component: App })
 
@@ -191,21 +192,40 @@ function App() {
       </section>
 
       {/* Footer */}
-      <footer className="max-w-5xl mx-auto px-6 py-16 border-t border-[#1a1a1a]">
-        <div className="flex flex-col md:flex-row justify-between items-center gap-8 text-[10px] font-black  tracking-[0.2em] text-gray-400">
-          <div className="flex items-center gap-3">
-            <span className="text-3xl font-black tracking-tighter text-white">
-              oat<span className="text-[#c4a484]">.</span>meal
-            </span>
-          </div>
-          <div className="flex gap-10">
-            <a href="#" className="hover:text-[#c4a484] transition-colors">
-              GitHub
+      <footer className="max-w-5xl mx-auto px-6 py-20 border-t border-[#1a1a1a]">
+        <div className="flex flex-col items-center gap-12 text-center">
+          <span className="text-3xl font-black tracking-tighter text-white">
+            oat<span className="text-[#c4a484]">.</span>meal
+          </span>
+
+          <div className="flex flex-col items-center gap-6">
+            <a
+              href="https://github.com"
+              target="_blank"
+              rel="noreferrer"
+              className="text-[10px] font-black uppercase tracking-[0.2em] text-gray-400 hover:text-[#c4a484] transition-colors"
+            >
+              GitHub Project
             </a>
+
+            <div className="flex flex-col items-center gap-2">
+              <div className="text-sm text-gray-500 font-bold flex items-center justify-center gap-1.5">
+                Made with <Heart size={14} className="fill-white text-white" />{' '}
+                by{' '}
+                <a
+                  href="https://github.com/meetmakwana7396"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="hover:text-[#c4a484] transition-colors"
+                >
+                  meetmakwana
+                </a>
+              </div>
+              <p className="text-[10px] font-black text-gray-700 uppercase tracking-[0.3em]">
+                © 2026
+              </p>
+            </div>
           </div>
-        </div>
-        <div className="mt-8 text-center text-sm text-gray-300 font-bold">
-          handcrafted by developers, for developers. © 2026.
         </div>
       </footer>
     </div>
