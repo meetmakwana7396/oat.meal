@@ -1,118 +1,213 @@
 import { createFileRoute } from '@tanstack/react-router'
-import {
-  Zap,
-  Server,
-  Route as RouteIcon,
-  Shield,
-  Waves,
-  Sparkles,
-} from 'lucide-react'
 
 export const Route = createFileRoute('/')({ component: App })
 
-function App() {
-  const features = [
-    {
-      icon: <Zap className="w-12 h-12 text-cyan-400" />,
-      title: 'Powerful Server Functions',
-      description:
-        'Write server-side code that seamlessly integrates with your client components. Type-safe, secure, and simple.',
-    },
-    {
-      icon: <Server className="w-12 h-12 text-cyan-400" />,
-      title: 'Flexible Server Side Rendering',
-      description:
-        'Full-document SSR, streaming, and progressive enhancement out of the box. Control exactly what renders where.',
-    },
-    {
-      icon: <RouteIcon className="w-12 h-12 text-cyan-400" />,
-      title: 'API Routes',
-      description:
-        'Build type-safe API endpoints alongside your application. No separate backend needed.',
-    },
-    {
-      icon: <Shield className="w-12 h-12 text-cyan-400" />,
-      title: 'Strongly Typed Everything',
-      description:
-        'End-to-end type safety from server to client. Catch errors before they reach production.',
-    },
-    {
-      icon: <Waves className="w-12 h-12 text-cyan-400" />,
-      title: 'Full Streaming Support',
-      description:
-        'Stream data from server to client progressively. Perfect for AI applications and real-time updates.',
-    },
-    {
-      icon: <Sparkles className="w-12 h-12 text-cyan-400" />,
-      title: 'Next Generation Ready',
-      description:
-        'Built from the ground up for modern web applications. Deploy anywhere JavaScript runs.',
-    },
-  ]
+const TEMPLATES = [
+  {
+    id: 1,
+    title: 'Minimal Portfolio',
+    description:
+      'Perfect for designers who want their work to speak for itself.',
+    category: 'Portfolio',
+    image:
+      'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800',
+  },
+  {
+    id: 2,
+    title: 'SaaS Landing Page',
+    description: 'A high-conversion landing page with pricing and features.',
+    category: 'Business',
+    image:
+      'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800',
+  },
+  {
+    id: 3,
+    title: 'E-commerce Shop',
+    description: 'Clean product listings and a sleek checkout flow.',
+    category: 'Shop',
+    image:
+      'https://images.unsplash.com/photo-1472851294608-062f824d29cc?auto=format&fit=crop&q=80&w=800',
+  },
+  {
+    id: 4,
+    title: 'Personal Blog',
+    description: 'Elegantly typeset layout focused on readability.',
+    category: 'Blog',
+    image:
+      'https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&q=80&w=800',
+  },
+  {
+    id: 5,
+    title: 'Creative Agency',
+    description: 'Bold typography and dynamic layouts for agencies.',
+    category: 'Agency',
+    image:
+      'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=800',
+  },
+  {
+    id: 6,
+    title: 'Developer Resume',
+    description: 'A dark-themed resume for software engineers.',
+    category: 'Portfolio',
+    image:
+      'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&q=80&w=800',
+  },
+]
 
+function App() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900">
-      <section className="relative py-20 px-6 text-center overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 via-blue-500/10 to-purple-500/10"></div>
-        <div className="relative max-w-5xl mx-auto">
-          <div className="flex items-center justify-center gap-6 mb-6">
-            <img
-              src="/tanstack-circle-logo.png"
-              alt="TanStack Logo"
-              className="w-24 h-24 md:w-32 md:h-32"
-            />
-            <h1 className="text-6xl md:text-7xl font-black text-white [letter-spacing:-0.08em]">
-              <span className="text-gray-300">TANSTACK</span>{' '}
-              <span className="bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
-                START
-              </span>
-            </h1>
+    <div className="min-h-screen bg-black text-[#d1d5db] font-sans selection:bg-[#c4a484] selection:text-black antialiased">
+      {/* Hero Section */}
+      <section className="max-w-5xl mx-auto px-6 pt-24 pb-16">
+        {/* Logo - Typography Only */}
+        <div className="mb-12">
+          <span className="text-3xl font-black tracking-tighter text-white">
+            oat<span className="text-[#c4a484]">.</span>meal
+          </span>
+        </div>
+
+        <h1 className="text-4xl md:text-6xl font-black text-white mb-6 tracking-tight leading-[1.1]">
+          Website templates built <br />
+          with Oat UI.
+        </h1>
+        <div className="space-y-6 text-xl text-gray-300 font-medium leading-relaxed max-w-3xl mb-12">
+          <p>
+            Beautiful, minimal, and ultra-lightweight website templates for the
+            community. Built using the zero-dependency Oat UI library.
+          </p>
+          <p>
+            Oat Project provides production-ready website templates for those
+            who prefer the simplicity of raw HTML and CSS. No complex build
+            tools, no bloated frameworks—just clean, semantic code.
+          </p>
+        </div>
+
+        <div className="flex gap-4 mb-32">
+          <a
+            href="#gallery"
+            className="px-8 py-3 bg-white text-black font-bold rounded-md hover:bg-gray-200 transition-colors"
+          >
+            Browse templates
+          </a>
+          <a
+            href="https://github.com"
+            target="_blank"
+            rel="noreferrer"
+            className="px-8 py-3 bg-black text-white font-bold rounded-md border border-gray-800 hover:border-gray-600 transition-colors"
+          >
+            Contribution Guide
+          </a>
+        </div>
+
+        {/* Feature Highlights */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-40 border-t border-[#1a1a1a] pt-16">
+          <div className="flex flex-col gap-2">
+            <span className="text-[10px] font-black text-[#c4a484] uppercase tracking-[0.3em]">
+              Pure Performance
+            </span>
+            <h3 className="text-white font-bold text-lg">
+              Zero Framework Bloat
+            </h3>
+            <p className="text-gray-400 text-sm">
+              Every template relies on Oat UI's minimal 8KB footprint. Maximum
+              speed, zero overhead.
+            </p>
           </div>
-          <p className="text-2xl md:text-3xl text-gray-300 mb-4 font-light">
-            The framework for next generation AI applications
-          </p>
-          <p className="text-lg text-gray-400 max-w-3xl mx-auto mb-8">
-            Full-stack framework powered by TanStack Router for React and Solid.
-            Build modern applications with server functions, streaming, and type
-            safety.
-          </p>
-          <div className="flex flex-col items-center gap-4">
-            <a
-              href="https://tanstack.com/start"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-8 py-3 bg-cyan-500 hover:bg-cyan-600 text-white font-semibold rounded-lg transition-colors shadow-lg shadow-cyan-500/50"
-            >
-              Documentation
-            </a>
-            <p className="text-gray-400 text-sm mt-2">
-              Begin your TanStack Start journey by editing{' '}
-              <code className="px-2 py-1 bg-slate-700 rounded text-cyan-400">
-                /src/routes/index.tsx
-              </code>
+          <div className="flex flex-col gap-2">
+            <span className="text-[10px] font-black text-[#c4a484] uppercase tracking-[0.3em]">
+              Community Driven
+            </span>
+            <h3 className="text-white font-bold text-lg">Open for Everyone</h3>
+            <p className="text-gray-400 text-sm">
+              Free to use, customize, and redistribute. Build your next project
+              in minutes, not hours.
+            </p>
+          </div>
+          <div className="flex flex-col gap-2">
+            <span className="text-[10px] font-black text-[#c4a484] uppercase tracking-[0.3em]">
+              Modern Aesthetics
+            </span>
+            <h3 className="text-white font-bold text-lg">Clean by Design</h3>
+            <p className="text-gray-400 text-sm">
+              Focused on typography, spacing, and accessibility. Templates that
+              look premium out of the box.
             </p>
           </div>
         </div>
-      </section>
 
-      <section className="py-16 px-6 max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {features.map((feature, index) => (
-            <div
-              key={index}
-              className="bg-slate-800/50 backdrop-blur-sm border border-slate-700 rounded-xl p-6 hover:border-cyan-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-cyan-500/10"
-            >
-              <div className="mb-4">{feature.icon}</div>
-              <h3 className="text-xl font-semibold text-white mb-3">
-                {feature.title}
-              </h3>
-              <p className="text-gray-400 leading-relaxed">
-                {feature.description}
-              </p>
+        {/* Template Gallery header */}
+        <div id="gallery" className="mb-16 flex items-center justify-between">
+          <h2 className="text-2xl font-black text-white tracking-widest uppercase italic">
+            The Collection
+          </h2>
+          <div className="h-px bg-[#1a1a1a] grow mx-8 hidden md:block"></div>
+          <p className="text-gray-400 font-bold text-[10px] uppercase tracking-[0.3em]">
+            © 2026
+          </p>
+        </div>
+
+        {/* Template Grid - 3 per row, A4 shape */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-20 pb-32">
+          {TEMPLATES.map((template) => (
+            <div key={template.id} className="group flex flex-col">
+              {/* Card Image Wrapper - A4 Aspect Ratio (1:1.414) */}
+              <div className="relative aspect-[1/1.414] bg-[#0a0a0a] border border-[#1a1a1a] rounded-sm overflow-hidden transition-all duration-300 group-hover:border-white/10 group-hover:shadow-[0_0_50px_rgba(255,255,255,0.03)]">
+                <img
+                  src={template.image}
+                  alt={template.title}
+                  className="w-full h-full object-cover grayscale opacity-70 transition-all duration-700 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105"
+                />
+
+                {/* Overlay Interaction */}
+                <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-all duration-500 flex flex-col items-center justify-center gap-4 backdrop-blur-sm">
+                  <button className="px-6 py-2 bg-white text-black text-[10px] font-black uppercase tracking-[0.2em] rounded-sm hover:scale-105 active:scale-95 transition-all w-32 shadow-2xl">
+                    Preview
+                  </button>
+                  <button className="px-6 py-2 bg-transparent text-white text-[10px] font-black uppercase tracking-[0.2em] rounded-sm hover:bg-white/10 active:scale-95 transition-all w-32 border border-white/20 shadow-2xl">
+                    Download
+                  </button>
+
+                  {/* Name appears on hover overlay bottom */}
+                  <div className="absolute bottom-8 left-0 right-0 px-4 text-center">
+                    <h4 className="text-[12px] font-black text-white tracking-[0.2em] uppercase shadow-sm">
+                      {template.title}
+                    </h4>
+                  </div>
+                </div>
+              </div>
+
+              {/* Minimal Info Below */}
+              <div className="mt-5 flex justify-between items-center px-1">
+                <span className="text-[10px] font-bold text-gray-400 uppercase tracking-[0.15em]">
+                  {template.category}
+                </span>
+                <span className="text-[9px] font-medium text-gray-500 uppercase italic">
+                  Free Pack
+                </span>
+              </div>
             </div>
           ))}
         </div>
       </section>
+
+      {/* Footer */}
+      <footer className="max-w-5xl mx-auto px-6 py-16 border-t border-[#1a1a1a]">
+        <div className="flex flex-col md:flex-row justify-between items-center gap-8 text-[10px] font-black  tracking-[0.2em] text-gray-400">
+          <div className="flex items-center gap-3">
+            <span className="text-3xl font-black tracking-tighter text-white">
+              oat<span className="text-[#c4a484]">.</span>meal
+            </span>
+          </div>
+          <div className="flex gap-10">
+            <a href="#" className="hover:text-[#c4a484] transition-colors">
+              GitHub
+            </a>
+          </div>
+        </div>
+        <div className="mt-8 text-center text-sm text-gray-300 font-bold">
+          handcrafted by developers, for developers. © 2026.
+        </div>
+      </footer>
     </div>
   )
 }
